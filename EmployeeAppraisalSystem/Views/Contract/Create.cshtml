@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Create Employee Contract";
+}
+
+@model ContractVM
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> Create Contract</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <div class="border p-3">
+                @* <div asp-validation-summary="All"></div> *@
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="@Model.Contract.EmployeeID" asp-items="@Model.EmployeeList" class="form-select border-0 shadow">
+                        <option disabled>Select an employee</option>
+                    </select>
+                    <label asp-for="@Model.Contract.EmployeeID" class="ms-2"></label>
+                    <span asp-validation-for="@Model.Contract.EmployeeID" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Contract.StartDate" class="form-control border-0 shadow" />
+                    <label asp-for="Contract.StartDate" class="ms-2"></label>
+                    <span asp-validation-for="Contract.StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Contract.EndDate" class="form-control border-0 shadow" />
+                    <label asp-for="Contract.EndDate" class="ms-2"></label>
+                    <span asp-validation-for="Contract.EndDate" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="Contract.Status" class="form-control border-0 shadow">
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Expired">Expired</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                    <label asp-for="Contract.Status" class="ms-2"></label>
+                    <span asp-validation-for="Contract.Status" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Contract.Department" class="form-control border-0 shadow" />
+                    <label asp-for="Contract.Department" class="ms-2"></label>
+                    <span asp-validation-for="Contract.Department" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Contract.Position" class="form-control border-0 shadow" />
+                    <label asp-for="Contract.Position" class="ms-2"></label>
+                    <span asp-validation-for="Contract.Position" class="text-danger"></span>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Create</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Contract" asp-action="Index" class="btn btn-outline-primary border form-control">Back to List</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+            }

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Employee Appraisal";
+}
+
+@model List<Appraisal>
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Appraisal List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-6">
+            </div>
+
+            <div class="col-6 text-end">
+                <a asp-controller="Appraisal" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Create New Appraisal
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Objective
+                    </th>
+
+                    <th>
+                        Appraisal Period
+                    </th>
+                    <th>
+                        Rating
+                    </th>
+                    <th>
+                        Comment
+                    </th>
+                    <th>
+                        Employee
+                    </th>
+                    <th>
+                        Workflow Status
+                    </th>
+                    <th>
+                        ApproverComment
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.OrderBy(u => u.AppraisalID))
+                {
+                    <tr>
+                        <td>@obj.Objective.NameOfTheObjective</td>
+                        <td>@obj.AppraisalPeriod.Name</td>
+                        <td>@obj.Rating</td>
+                        <td>@obj.Comment</td>
+                        <td>@obj.Employee.FirstName @obj.Employee.LastName</td>
+                        <td>@obj.WorkflowStatus</td>
+                        <td>@obj.ApproverComment</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
