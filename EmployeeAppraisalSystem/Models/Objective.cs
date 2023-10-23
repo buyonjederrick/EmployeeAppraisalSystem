@@ -16,12 +16,12 @@ namespace EmployeeAppraisalSystem.Models
         // Start date for the activity related to this objective.
         [Display(Name = "Activity Start Date")]
         [DataType(DataType.Date)]
-        public DateTime ActivityStartDate { get; set; }
+        public DateTime ActivityStartDate { get; set; } = DateTime.Now;
 
         // End date for the activity related to this objective.
         [Display(Name = "Activity End Date")]
         [DataType(DataType.Date)]
-        public DateTime ActivityEndDate { get; set; }
+        public DateTime ActivityEndDate { get; set; } = DateTime.Now;
 
         // Identifier of the employee associated with this objective.
         [Display(Name = "Employee Name")]

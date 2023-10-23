@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeAppraisalSystem.Models
 {
@@ -14,11 +15,13 @@ namespace EmployeeAppraisalSystem.Models
 
         // The start date for reporting during the appraisal period, displayed as "Reporting Start Date."
         [DisplayName("Reporting Start Date")]
-        public DateTime ReportingStartDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime ReportingStartDate { get; set; } = DateTime.Now;
 
         // The end date for reporting during the appraisal period, displayed as "Reporting End Date."
         [DisplayName("Reporting End Date")]
-        public DateTime ReportingEndDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime ReportingEndDate { get; set; } = DateTime.Now;
 
         // A collection of appraisal records associated with this appraisal period.
         public List<Appraisal>? Appraisals { get; set; }

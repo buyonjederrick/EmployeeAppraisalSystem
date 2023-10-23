@@ -14,6 +14,7 @@ namespace EmployeeAppraisalSystem.Models.ViewModels
         // The [ValidateNever] attribute is used to indicate that this property should not be automatically validated
         // during model binding. In this case, it holds a list of SelectListItem objects for populating a dropdown
         // list in a view, and we don't need validation for it as it's not user input.
+        [ValidateNever]
         public IEnumerable<SelectListItem> EmployeeList { get; set; }
     }
 }

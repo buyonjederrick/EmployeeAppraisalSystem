@@ -18,12 +18,12 @@ namespace EmployeeAppraisalSystem.Models
         // The start date of the contract, with a specified data type for date.
         [Display(Name = "Start Date")]
         [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
         // The end date of the contract, with a specified data type for date.
         [Display(Name = "End Date")]
         [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; } = DateTime.Now;
 
         // The status of the contract.
         [Display(Name = "Status")]
