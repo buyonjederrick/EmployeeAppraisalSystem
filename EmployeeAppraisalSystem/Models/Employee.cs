@@ -13,21 +13,29 @@ namespace EmployeeAppraisalSystem.Models
         public int EmployeeID { get; set; }
 
         // First name of the employee.
+        [Display(Name = "First Name")]
         public string? FirstName { get; set; }
 
         // Last name of the employee.
+        [Display(Name = "Last Name")]
         public string? LastName { get; set; }
 
         // Email address of the employee.
+        [Display(Name = "Email Address")]
         public string? EmailAddress { get; set; }
 
         // Date of birth of the employee.
-        public DateTime DateOfBirth { get; set; }
+        [Display(Name = "Date Of Birth")]
+        [DataType(DataType.Date)]
+        public DateTime DateOfBirth { get; set; } = DateTime.Now;
 
-        // National Insurance Number (NIN) of the employee. 
+        // National Identification Number (NIN) of the employee.
+        // 
+        [Display(Name = "National Identification Number (NIN)")]
         public string? NIN { get; set; }
 
         // Telephone number of the employee.
+        [Display(Name = "Telephone Number")]
         public string? TelephoneNumber { get; set; }
 
         // A list of contracts associated with the employee.

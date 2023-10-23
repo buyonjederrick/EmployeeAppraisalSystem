@@ -47,8 +47,8 @@
                 {
                     <tr> 
                         <td>@obj.NameOfTheObjective</td>
-                        <td>@obj.ActivityStartDate</td>
-                        <td>@obj.ActivityEndDate</td>
+                        <td>@obj.ActivityStartDate.ToString("MM/dd/yyyy")</td>
+                        <td>@obj.ActivityEndDate.ToString("MM/dd/yyyy")</td>
                         <td>@obj.Employee.FirstName @obj.Employee.LastName</td>
                     </tr>
                 }
