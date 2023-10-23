@@ -28,10 +28,8 @@ The project relies on several NuGet packages to provide essential functionalitie
 
 Follow these steps to set up the Employee Appraisal System:
 
-**Clone the Repository:** Begin by cloning the project repository to your local machine. Navigate to your project directory in the command line and use the following commands:
+**Clone the Repository:** Begin by cloning the project repository to your local machine.
 
-git clone https://github.com/your-username/employee-appraisal-system.git
-cd employee-appraisal-system
 
 ***Edit the Connection String:*** In the **appsettings.json file**, update the connection string to point to your SQL Server instance. This is where the application's data will be stored. Modify the "DefaultConnection" string as follows:
 
