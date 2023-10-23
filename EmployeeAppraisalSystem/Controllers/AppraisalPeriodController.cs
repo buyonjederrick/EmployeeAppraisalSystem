@@ -7,10 +7,14 @@ namespace EmployeeAppraisalSystem.Controllers
     public class AppraisalPeriodController : Controller
     {
         private readonly ApplicationDbContext _db;
+
+        // Constructor to initialize the database context
         public AppraisalPeriodController(ApplicationDbContext db)
         {
             _db = db;
         }
+
+        // Action to display a list of Appraisal Period
         public IActionResult Index()
         {
             List<AppraisalPeriod> objAppraisalPeriodList = _db.AppraisalPeriods.ToList();
